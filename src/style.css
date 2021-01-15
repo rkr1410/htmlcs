@@ -1,0 +1,174 @@
+:root {
+    --listitem-color: #1f66e5;
+    --sub-listitem-color: #1f66e5;
+    --code-bg-color: cornsilk;
+    --code-color: black;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* --------------- just some indentation --------------- */
+div.indent {
+    margin-left: 15px;
+}
+
+/* -------------------- "text" divs -------------------- */
+div.text {
+    border: 1px solid #999;
+    padding: 5px;
+}
+
+/* ----------- List items inside "text" divs ----------- */
+div.text > ul > li {
+    color: var(--listitem-color);
+    font-family: monospace;
+    font-weight: bold;
+    padding-top: 2px;
+}
+
+/*- summary text divs for placement within "text" divs -*/
+div.text-summary {
+    color: crimson;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+/* ------------ Use this instead of <em> ------------- */
+.attention-text {
+    color: brown;
+}
+
+/* -------------- Inlined <code> blcks --------------- */
+code {
+    display: inline-block;
+    font-family: monospace;
+    font-style: normal;
+    background-color: var(--code-bg-color);
+    color: var(--code-color);
+    border: 1px solid #999999;
+    border-radius: 3px;
+    padding: 0px 2px;
+    margin: 1px;
+}
+
+/* ---- All list items, incl. table and form ---- */
+.main-list > li, .menuitem__table th, .menuitem__form {
+    color: var(--listitem-color);
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-top: 1rem;
+    border-top: 1px dashed;
+    padding-top: 2px;
+}
+
+/* -------------- margin showcase boxes -------------- */
+div.margin-showcase {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+}
+
+div.margin-showcase-outer {
+    border: 1px dotted black;
+    width: 50px;
+}
+
+div.margin-showcase-internal {
+    border: 1px dotted red;
+    transition-duration: 0.2s;
+}
+
+#margin-one-value:hover {
+    margin: 5px;
+}
+
+#margin-two-values:hover {
+    margin: 5px 15px;
+}
+
+#margin-three-values:hover {
+    margin: 15px 15px -15px;
+}
+
+#margin-four-values:hover {
+    margin: 0px 10px 20px 30px;
+}
+
+/* -------------- transition listitem -------------- */
+#transition {
+    transition-duration: 0.2s;
+}
+
+#transition:hover {
+    font-weight: bolder;
+    margin-left: 1rem;
+}
+
+/* ---- TABLE listitem and it's elements ---- */
+.menuitem__table, .menuitem__table th, .menuitem__table td {
+    border: 1px solid black;
+}
+
+.menuitem__table td {
+    background-color: #aac5f5;
+}
+
+div.example-table {
+    display: flex;
+}
+
+.example-table__table {
+    border: 1px solid black;
+    border-spacing: 4px;
+}
+
+.example-table__table th {
+    border: 1px dashed blue;
+}
+
+.example-table__table tfoot td {
+    border: 1px dotted red;
+}
+
+.example-table__table td {
+    border: 1px solid black;
+    padding: 12px;
+}
+
+.example-table__table colgroup col:nth-child(1) {
+    background-color: antiquewhite;
+}
+
+.example-table__table colgroup col:nth-child(2) {
+    background-color: azure;
+}
+
+div.shapes {
+    max-width: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+
+div#circle {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+div#square {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+div#triangle {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid red;
+}

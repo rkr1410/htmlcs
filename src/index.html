@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <link href="style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Ye olde HTML/CSS learning checklist</h1>
+        <h2>HTML</h2>
+        <ul class="main-list">
+            <!--------------- LINK ----------------------->
+            <li>link</li>
+            <div class="text">Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a favicon or main screen application icon for a mobile app.
+            <br>
+            <h4>HTML</h4>
+<pre>
+    &lt;link href="https://fonts.googleapis.com/<wbr>css2?family=Grenze+Gotisch" rel="stylesheet">
+</pre>            
+            <h4>CSS</h4>
+<pre>
+    h3 {
+        <span style="font-weight: bolder;">font-family: "Grenze Gotisch", cursive;</span>
+        font-size: 3rem;
+        text-align: center;
+        text-shadow: crimson 1px 0 7px;
+    }
+</pre>
+            <b>Note:</b> in this case, instead of <code>&lt;link&gt;</code>ing the font, we can <code>@import</code> it directly into the CSS:
+<pre>
+    @import url('https://fonts.googleapis.com<wbr>/css2?family=Grenze+Gotisch');
+</pre>
+            </div>
+
+            <!---------------- WBR ----------------------->
+            <li>&lt;wbr&gt;</li>
+            <div class="text">Browser can be hinted at where to break a long line of text without any whitespace. In the following text, <code>&lt;wbr&gt;</code> tag locations are marked with triple vertical line symbols - try resizing the window:
+            <br>
+            <br>
+            That<b class="attention-text">|||</b><wbr>Is<b class="attention-text">|||</b><wbr>A<b class="attention-text">|||</b><wbr>Long<b class="attention-text">|||</b><wbr>Sentence<b class="attention-text">|||</b><wbr>Taking<b class="attention-text">|||</b><wbr>Up<b class="attention-text">|||</b><wbr>Quite<b class="attention-text">|||</b><wbr>A<b class="attention-text">|||</b><wbr>Bit<b class="attention-text">|||</b><wbr>Of<b class="attention-text">|||</b><wbr>Space<b class="attention-text">|||</b><wbr>And<b class="attention-text">|||</b><wbr>Also<b class="attention-text">|||</b><wbr>Not<b class="attention-text">|||</b><wbr>Containing<b class="attention-text">|||</b><wbr>Any<b class="attention-text">|||</b><wbr>Whitespace<b class="attention-text">|||</b><wbr>To<b class="attention-text">|||</b><wbr>Show<b class="attention-text">|||</b><wbr>How<b class="attention-text">|||</b><wbr>The<b class="attention-text">|||</b><wbr>WBR<b class="attention-text">|||</b><wbr>Tag<b class="attention-text">|||</b><wbr>Works<b class="attention-text">|||</b><wbr>In<b class="attention-text">|||</b><wbr>A<b class="attention-text">|||</b><wbr>Browser<b class="attention-text">|||</b><wbr>Window<b class="attention-text">|||</b><wbr>By<b class="attention-text">|||</b><wbr>Allowing<b class="attention-text">|||</b><wbr>Word<b class="attention-text">|||</b><wbr>Break<b class="attention-text">|||</b><wbr>Opportunities<b class="attention-text">|||</b><wbr>Which<b class="attention-text">|||</b><wbr>Makes<b class="attention-text">|||</b><wbr>Life<b class="attention-text">|||</b><wbr>Easier
+            <br><br>
+            The same sentence, but now the triple verticals are not folowed by <code>&lt;wbr&gt;</code> tags.
+            That<b class="attention-text">|||</b>Is<b class="attention-text">|||</b>A<b class="attention-text">|||</b>Long<b class="attention-text">|||</b>Sentence<b class="attention-text">|||</b>Taking<b class="attention-text">|||</b>Up<b class="attention-text">|||</b>Quite<b class="attention-text">|||</b>A<b class="attention-text">|||</b>Bit<b class="attention-text">|||</b>Of<b class="attention-text">|||</b>Space<b class="attention-text">|||</b>And<b class="attention-text">|||</b>Also<b class="attention-text">|||</b>Not<b class="attention-text">|||</b>Containing<b class="attention-text">|||</b>Any<b class="attention-text">|||</b>Whitespace<b class="attention-text">|||</b>To<b class="attention-text">|||</b>Show<b class="attention-text">|||</b>How<b class="attention-text">|||</b>The<b class="attention-text">|||</b>WBR<b class="attention-text">|||</b>Tag<b class="attention-text">|||</b>Works<b class="attention-text">|||</b>In<b class="attention-text">|||</b>A<b class="attention-text">|||</b>Browser<b class="attention-text">|||</b>Window<b class="attention-text">|||</b>By<b class="attention-text">|||</b>Allowing<b class="attention-text">|||</b>Word<b class="attention-text">|||</b>Break<b class="attention-text">|||</b>Opportunities<b class="attention-text">|||</b>Which<b class="attention-text">|||</b>Makes<b class="attention-text">|||</b>Life<b class="attention-text">|||</b>Easier
+            </div>            
+            
+            <!---------------- TABLES -------------------->
+            <li>
+                <table class="menuitem__table">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Tables</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <div class="text">
+                A maxed out table is: <code>&lt;caption&gt;</code>, <code>&lt;colgroup&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> and a <code>&lt;tfoot&gt;</code>.
+                <br>
+                Colgroup contains <code>&lt;col&gt;</code> elements, which can be styled separately, and can have a span attribute.
+                <br>
+                <br>
+                The old-school table attributes are deprecated:
+                <ul>
+                    <li>align</li>
+                    <code>left, right, center</code>: use <code>margin: auto</code> trick for either or both.
+                    <li>border</li>
+                    Just use CSS <code>border</code>.
+                    <li>cellpadding</li>
+                    Apply <code>border-collapse: collapse</code> to the <code>&lt;table&gt;</code> and <code>padding</code> to the <code>&lt;td&gt;</code> elements.
+                    <li>cellspacing</li>
+                    Remove <code>border-collapse: collapse</code> from the <code>&lt;table&gt;</code> and add <code>border-spacing</code> instead.
+                </ul>
+                
+                <div class="example-table">
+                    <table class="example-table__table">
+                        <caption>This is a caption</caption>
+                        <colgroup>
+                            <col>
+                            <col span="2">
+                        </colgroup>
+                        <thead><tr><th colspan="3">Header</th></tr></thead>
+                        <tbody>
+                            <tr><td>Uno</td><td>Dos</td><td>Tres</td></tr>
+                        </tbody>
+                        <tfoot><tr><td colspan="3">Footer</td></tr></tfoot>
+                    </table>
+                    <div class="text-summary">
+                        Table to the left uses no attributes (other than <code>span</code> for <code>col</code> and <code>colspan</code> for header and footer). <code>border-spacing </code> for table is 4px, <code>padding</code> for <code>td</code> elements is 12px. 
+                        <br>
+                        <br>
+                        Background colors are set using <code>col</code> styling with <code>:nth-child</code> pseudoclass.
+                        <br>
+                        <br>
+                        <a href="https://www.w3.org/WAI/tutorials/tables/irregular/">See here for more info on col/colgroup, also on how tbody might appear more than once in a table.</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <li>variables (CSS 3.0)</li>
+            <div class="text">
+                There's a <a href="https://drafts.csswg.org/selectors-4/#root-pseudo"><code>:root</code></a> pseudoclass, matching the document tree root - in case of html this is equivalent to <code>&lt;html&gt;</code>, except has greater specificity. It's useful to define <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">global CSS variables</a> there:
+<pre>
+    :root {
+        --primary-color: black;
+    }
+
+    .code {
+        color: var(--primary-color);
+    }
+</pre>
+            </div>
+            
+            <li id="transition">TRANSITIONS (hover me)</li>
+            <div class="text">
+<pre>
+    #transition {
+        transition-duration: 0.2s;
+    }
+
+    #transition:hover {
+        font-weight: bolder;
+        margin-left: 1rem;
+    }
+</pre>
+            </div>
+            
+            <li>margin</li>
+            <div class="text">
+                Margins values <em>(hover the 'o' to see)</em>: 
+                <div class="margin-showcase">
+                    <div class="indent">
+                        <code>5px</code> - all of them
+                    </div>
+                    <div class="margin-showcase-outer">
+                        <div class="margin-showcase-internal" id="margin-one-value">o</div>
+                    </div>
+                </div>
+
+                <div class="margin-showcase">
+                    <div class="indent">
+                        <code>5px 15px</code> - top&amp;down left&amp;right
+                    </div>
+                    <div class="margin-showcase-outer">
+                        <div class="margin-showcase-internal" id="margin-two-values">o</div>
+                    </div>
+                </div>
+                
+                <div class="margin-showcase">
+                    <div class="indent">
+                        <code>15px 15px -15px</code> - top left&amp;right bottom
+                    </div>
+                    <div class="margin-showcase-outer">
+                        <div class="margin-showcase-internal" id="margin-three-values">o</div>
+                    </div>
+                </div>
+
+                <div class="margin-showcase">
+                    <div class="indent">
+                        <code>0px 10px 20px 30px</code> - top right bottom left
+                    </div>
+                    <div class="margin-showcase-outer">
+                        <div class="margin-showcase-internal" id="margin-four-values">o</div>
+                    </div>
+                </div>
+
+                <br>
+                You can <b>center</b> an element using <code>margin: 0 auto</code>, provided the box is smaller than 100%. It won't work on inlined elements, since these are treated more or less like text.
+                <br>
+                <b>Note: </b><em><code>margin: auto</code> does the trick, because usually top and bottom are calculated to zero. MDN-canonical way seems to be always setting top/down, too (even if these are supposed to evaulate to zero) with <code>margin: <b class="attention-text">0</b> auto</code> </em>
+                <div style="border: 1px solid red; width: 50%; margin: 10px auto;">
+                    <code>width: 50%; margin: 10px auto;</code>
+                </div>
+                And then content can be centered just with <code>text-align: center</code>
+                <div style="border: 1px solid red; width: 60%; margin: 10px auto; text-align: center;">
+                    <code>width: 60%; margin: 10px auto; text-align: center;</code>
+                </div>
+            </div>
+            
+            <li><input class="menuitem__form" type="text" value="forms" disabled></li>
+            <ul>
+                <li>input types: img, hidden...</li>
+            </ul>
+            
+            <li>positioning</li>
+            <ul>
+                <li><b>position:</b> relative, absolute etc.
+                    <br>
+                    Does it have something yo do with floats or is it it's own thing?
+                </li>
+                <li>display types (run-in?, list-style-type: "\1F44D"; (unicodes?). How does <em>EXACTLY</em> inline-block and the rest work?</li>
+                <li><b><a href="https://flexboxfroggy.com">flex</a>, <a href="https://cssgridgarden.com">grid</a></b>, or maybe cough up some cash and try <a href="https://scrimba.com/">Scrimba</a></li>
+                <li>old stuff like float,left/right? what does it mean and why center makes no sense?  clear</li>
+            </ul>
+            
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">pseudo-elements</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">pseudo-classes</a> <i>(:nth-child, :root...)</i></li>
+            
+            <li>sizing</li>
+            <div class="text">
+                <b>em</b>
+                <br>
+                Parent em - e.g. if you have a div > p and the div has a font-size of 15px, then setting p to 2em will result on 30px font size. If nothing is set, it will use some default value (em = ~16px)
+                <br>
+                <br>
+                <b>rem</b>
+                <br>
+                Root em. Less tricky than em. Say you have a WordPress widgets made up from separate php files - you  don't know the em value at given moment. Changing something in one place might blow up elsewhere.<br>Or you have a 0.75em font-size in your ul's, then nesting another inside will result in 0.75*0.75 font size.
+                <br>
+                <br>
+                <b>vh, vw</b>
+                <br>
+                Percentage of viewport height and width. Seems to be useful for setting margins/padding for top-level components.
+                <br>
+                <br>
+                <b>ch</b>
+                <br>
+                What's this, exactly? Also, are there any other units?
+                <br>
+                <br>
+                <b>responsive design</b>
+                <br>
+                Learn it, live it.
+                <br>
+                <br>
+                <div class="text-summary">So, some rules of thumb could be: 
+                <div class="indent">
+                    - use <code>vh/vw</code> for <code>html/body</code>
+                </div>
+                <div class="indent">
+                    - <code>rem</code> for component heights
+                </div>
+                <div class="indent" style="margin-bottom: 5px;">
+                    - percent for widths
+                </div>
+                Another useful trick might be doing root font size in <code>px</code>, modules with <code>rem</code> units and then elements inside modules in <code>em</code>.<a href="https://www.sitepoint.com/power-em-units-css/">See here for a discussion on em units</a>, and <a href="https://www.sitepoint.com/understanding-and-using-rem-units-in-css/">here for a take on rem pixel size calculation.</a></div>
+            </div>
+            
+            <li>borders (border-spacing, collapse? How to use with tables</li>
+            
+            <li>Entities? Like &amp;amp;, what needs to be escaped? How to introduce external entities?</li>
+            
+            <li>iframe</li>
+            
+            <li>random tags</li>
+            <ul>
+                <li>blockquote, cite, var, address, nav, footer, <s>tt</s>, del, ins, samp...</li>
+                <li><a href="https://www.w3.org/TR/CSS21/sample.html">just see here</a></li>
+            </ul>
+            
+            <li>[As|Un]sorted</li>
+            <ul>
+                <li>Maybe try <a href="https://www.theodinproject.com/">the Odin project</a></li>
+                <li>Don't forget <a href="https://javascript.info/">to learn some Javascript, too...</a></li>
+                <li>For starters, it seems <a href="https://developer.mozilla.org/en-US/docs/Learn">MDN has it all covered, from HTML through CSS to Javascript and it's frameworks (Vue included)</a> </li>
+                <li>Does <code>&lt;style&gt;</code> <b>need</b> type stylesheet?</li>
+                <p>It doesn't. <code>&lt;style type="text/css"&gt;</code> is the <b>only</b> supported type, and can (probably <em>should</em>) be omitted.</p>
+            </ul>
+            
+            <li>there was something important about this...</li>
+            <ul>
+                <li><code style="font-style: normal;">meta name="viewport" content="width=device-width, initial-scale=1.0"</code></li>
+            </ul>
+        </ul>
+
+        <h3>Unrelated</h3>
+        <ul>
+            <li> Youtube - coding challenges</li>
+        </ul>
+        
+        <div class="shapes">
+            <div id="circle"></div>
+            <div id="square"></div>
+            <div id="triangle"></div>
+        </div>
+    </body>
+</html>
