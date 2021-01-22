@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Trying out card shadows</title>
+        <style type="text/css">
+            div.container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                margin: 0.5em;
+            }
+            
+            div.container.lower {
+                margin-top: 40px;
+            }
+            
+            div.card {
+                border: 1px solid #888;
+                border-radius: 0.25em;
+                padding: 0.5em;
+                display: inline-block;
+                margin: 0.125em;
+                text-align: justify;
+            }
+            
+            div.card.shadow {
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+            }
+            
+            div.card.shadow.strong {
+                box-shadow: 0 6px 6px rgba(0, 0, 0, 0.29);
+            }
+
+            div.card.shadow.stronger {
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.29);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, quam quis finibus tristique, purus erat lobortis neque, nec efficitur libero eros eu nibh. Nunc aliquet arcu ac mauris mattis lacinia. 
+            </div>
+            <div class="card">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, quam quis finibus tristique, purus erat lobortis neque, nec efficitur libero eros eu nibh. Nunc aliquet arcu ac mauris mattis lacinia. 
+            </div>
+        </div>       
+        <div class="container lower">
+            <div class="card shadow">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, quam quis finibus tristique, purus erat lobortis neque, nec efficitur libero eros eu nibh. Nunc aliquet arcu ac mauris mattis lacinia. 
+            </div>
+            <div class="card shadow">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, quam quis finibus tristique, purus erat lobortis neque, nec efficitur libero eros eu nibh. Nunc aliquet arcu ac mauris mattis lacinia. 
+            </div>
+        </div>        
+        <div class="container lower">
+            <div class="card shadow strong">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, quam quis finibus tristique, purus erat lobortis neque, nec efficitur libero eros eu nibh. Nunc aliquet arcu ac mauris mattis lacinia. 
+            </div>
+            <div class="card shadow strong">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, quam quis finibus tristique, purus erat lobortis neque, nec efficitur libero eros eu nibh. Nunc aliquet arcu ac mauris mattis lacinia. 
+            </div>
+        </div>        
+        <div class="container lower">
+            <div class="card shadow stronger">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, quam quis finibus tristique, purus erat lobortis neque, nec efficitur libero eros eu nibh. Nunc aliquet arcu ac mauris mattis lacinia. 
+            </div>
+            <div class="card shadow stronger">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, quam quis finibus tristique, purus erat lobortis neque, nec efficitur libero eros eu nibh. Nunc aliquet arcu ac mauris mattis lacinia. 
+            </div>
+        </div>
+    </body>
+</html>

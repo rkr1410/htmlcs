@@ -1,0 +1,44 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="htmlcs.css">
+        <title>HTML+CSS crash course</title>
+    </head>
+    <body>
+        <section>
+            <article class="tag-description">
+                <h2 class="tag-name">&lt;!--<b>DOCTYPE html</b>&gt;</h2>
+                <div class="container">
+                    <p><code>&lt;!DOCTYPE html&gt;</code> is a required preamble at the top of an HTML document. This prevents the browser from going into quirks mode - a page redndering flow which emulates nonstandard behavior in old browsers.</p>
+                    <aside><p>Although <a href="https://html.spec.whatwg.org/multipage/syntax.html#the-doctype">the specification</a> says it's case-insensitive, it's a convention. <a href="https://dev.w3.org/html5/html-polyglot/html-polyglot.html#h3_doctype">W3 Polyglot Markup</a> requires the 'DOCTYPE' string to be uppercase, and suggests 'html' to be lowercase.</p></aside>
+                </div>
+            </article>
+
+            <article class="tag-description">
+                <h2 class="tag-name">html &gt; head &gt; <b>&lt;link rel href&gt;</b></h2>
+
+            
+            <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:
+            
+<code>
+    &lt;link href="https://fonts.googleapis.com/<wbr>css2?family=Grenze+Gotisch" rel="stylesheet">
+</code>            
+            or using CSS import:
+<code>
+    @import url('https://fonts.googleapis.com<wbr>/css2?family=Grenze+Gotisch');
+</code>
+
+<code>
+    h3 {
+        <span style="font-weight: bolder;">font-family: "Grenze Gotisch", cursive;</span>
+        ...
+    }
+</code>
+            <b>Note:</b> in this case, instead of <code>&lt;link&gt;</code>ing the font, we can <code>@import</code> it directly into the CSS:
+            </p>
+            
+            
+            </article>
+        </section>       
+    </body>
+</html>
