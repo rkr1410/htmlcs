@@ -38,15 +38,19 @@ article p {
     margin-bottom: 0.5rem;
 }
 
+pre {
+    margin: 0;
+}
+
 code {
     display: inline-block;
     font-family: monospace;
     font-style: normal;
-    background-color: cornsilk;
+    background-color: #f0f0f0;
     color: #333;
     border: 1px solid #999999;
     border-radius: 3px;
-    padding: 0px 2px;
+    padding: 2px 4px;
     margin: 1px;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -59,7 +63,7 @@ aside {
     padding-left: 0.25rem;
     margin-left: 0.5rem;
     margin-top: 0.5rem;
-    max-width: 35%;
+    max-width: 25%;
 }
 
 aside a:link {

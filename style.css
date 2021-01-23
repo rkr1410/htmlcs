@@ -53,6 +53,10 @@ code {
     margin: 1px;
 }
 
+code.dupa {
+    border-left: 2px solid #f84;
+}
+
 /* ---- All list items, incl. table and form ---- */
 .main-list > li, .menuitem__table th, .menuitem__form {
     color: var(--listitem-color);
