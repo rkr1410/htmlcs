@@ -2,6 +2,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="htmlcs.css">
+        <!-- TODO Check out Prism.js and see if it's any better then highlight.js -->
         <link rel="stylesheet" href="highlight/styles/default.css">
         <script src="highlight/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
@@ -9,31 +10,56 @@
     </head>
     <body>
         <section>
-            <article class="tag-description">
-                <h2 class="tag-name">&lt;!--<b>DOCTYPE html</b>&gt;</h2>
+            <article class="tag-description" id="doctype">
+                <div class="title">
+                    <h2 class="article-title">
+                        &lt;!--<b>DOCTYPE html</b>&gt;
+                    </h2>
+                    <a href="https://html.spec.whatwg.org/#the-doctype" target="_blank">spec</a>
+                </div>
                 <div class="container">
-                    <p><code class="hljs xml" style="display: inline-block; overflow-x: initial; padding: 2px 4px;"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span></code> is a required preamble at the top of an HTML document. This prevents the browser from going into quirks mode - a page redndering flow which emulates nonstandard behavior in old browsers.</p>
+                    <div class="content-with-aside">
+                        <p><code><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span></code> is a required preamble at the top of an HTML document. It prevents the browser from going into quirks mode <i>(a page redndering flow which emulates nonstandard behavior in old browsers)</i>.</p>
+                    </div>
                     <aside><p>Although <a href="https://html.spec.whatwg.org/multipage/syntax.html#the-doctype">the specification</a> says it's case-insensitive, it's a convention. <a href="https://dev.w3.org/html5/html-polyglot/html-polyglot.html#h3_doctype">W3 Polyglot Markup</a> requires the 'DOCTYPE' string to be uppercase, and suggests 'html' to be lowercase.</p></aside>
                 </div>
             </article>
 
-            <article class="tag-description">
-                <h2 class="tag-name">html &gt; head &gt; <b>&lt;link rel href&gt;</b></h2>
+            <article class="tag-description" id="html">
+                <div class="title">
+                    <h2 class="article-title">
+                        <b>&lt;html</b> lang="en"<b>&gt;</b>
+                    </h2>
+                    <a href="https://html.spec.whatwg.org/#the-html-element" target="_blank">spec</a>
+                </div>
+                <p>HTML document root. Specifying a <code>lang</code> attirbute will help speech synthesis in determining pronounciation rules, and translation popups might just stop pestering the user.</p>
+            </article>
+
+            <article class="tag-description" id="link">
+                <h2 class="article-title">html &gt; head &gt; <b>&lt;link rel href&gt;</b></h2>
                 <div class="container">
-                    <div style="max-width: 75%;">
+                    <div class="content-with-aside">
                         <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
 <pre>
-<code>&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet">
+<code>&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;
 </code>            
 </pre>
                     </div>
                     <aside>
-                        In this particular case we could just use CSS and @import url('font.url');
+                        In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
                     </aside>
                 </div>
-                    
-                    
             </article>
-        </section>       
+        </section>
+        <!-- various tags -->
+        <section>
+            <article>
+                <h2 class="article-title"><b>Random tags</b></h2>
+                <p><code>&lt;<span class="hljs-name">wbr</span>&gt;</code> Insert inside a long eord to show the browser where it can break the line.</p>
+            </article>
+        </section>
+        <footer>
+            <a href="https://html.spec.whatwg.org/">Full HTML Specification can be found here.</a>
+        </footer>
     </body>
 </html>

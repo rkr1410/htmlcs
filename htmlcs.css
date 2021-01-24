@@ -18,18 +18,23 @@ article {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.26)
 }
 
-article:first-of-type {
+body > section:first-of-type > article:first-of-type {
     margin-top: 0;
 }
 
-h2.tag-name {
+article > div.title {
+    display: flex;
+}
+
+article > div.title > h2.article-title {
+    flex: 1;
     font-family: monospace;
     color: #ccf;
     margin: 0;
     border-bottom: 1px solid #666;
 }
 
-h2.tag-name > b {
+article > div.title > h2.article-title > b {
     color: #669;
 }
 
@@ -41,6 +46,12 @@ article p {
 pre {
     margin: 0;
 }
+
+/*
+pre:hover, pre:focus {
+  width: min-content;
+}
+*/
 
 code {
     display: inline-block;
@@ -55,7 +66,13 @@ code {
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+div.content-with-aside {
+    max-width: 80%;
+    flex: 0.8;
+} 
+
 aside {
+    flex: 0.2;
     font-size: 0.7rem;
     font-family: sans-serif;
     color: #999;
@@ -63,7 +80,6 @@ aside {
     padding-left: 0.25rem;
     margin-left: 0.5rem;
     margin-top: 0.5rem;
-    max-width: 25%;
 }
 
 aside a:link {
@@ -80,4 +96,8 @@ aside p {
 
 div.container {
    display: flex;
+}
+
+footer {
+    margin-top: 2rem;
 }

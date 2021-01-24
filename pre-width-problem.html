@@ -1,0 +1,132 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>&lt;pre&gt; width problem</title>
+        
+        <style>
+            html {
+                background: #aaa;
+            }
+        
+            body {
+                margin: 0 auto;
+                background: #fff;
+                padding: 2rem;
+            }
+            
+            div.article-content {
+                display: flex;
+            }
+
+            article {
+                border: 1px solid black;
+                padding: 0.5rem;
+            }
+            
+            div.main-content {
+                flex: 0.8;
+                border: 3px dashed #696;
+            }
+            
+            aside {
+                flex: 0.2;
+                border: 3px dashed #aaa;
+                border-left: 2px solid #777;
+                padding-left: 0.5rem;
+                font-size: 0.8rem;
+            }
+            
+            .red-outline {
+                border: 1px solid red;
+            }
+            
+            pre {
+                margin-right: 0.5rem;
+                overflow-x: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Example link as <span class="red-outline">&lt;code&gt;</span></p>
+        <article>
+            <h2>html &lt;link&gt; element</h2>
+            <div class="article-content">
+                <div class="main-content">
+                    <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
+                    <code class="red-outline">&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;</code>
+                </div>
+                <aside>
+                    In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
+                </aside>
+            </div>
+        </article>
+
+        <br><br>
+        
+        <p>Example link as &lt;pre&gt;, the green-dashed &lt;div&gt; has <code>flex: 0.8;</code> set, the &lt;aside&gt; at the right has <code>flex: 0.2;</code> </p>
+
+        <article>
+            <h2>html &lt;link&gt; element</h2>
+            <div class="article-content">
+                <div class="main-content">
+                    <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
+                    <pre class="red-outline">&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;</pre>
+                </div>
+                <aside>
+                    In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
+                </aside>
+            </div>
+        </article>
+    
+        <br><br>
+        
+        <p>Let's change the &lt;pre&gt;'s width to just 50% to see if it changes anything:</p>
+
+        <article>
+            <h2>html &lt;link&gt; element</h2>
+            <div class="article-content">
+                <div class="main-content">
+                    <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
+                    <pre class="red-outline" style="width: 50%">&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;</pre>
+                </div>
+                <aside>
+                    In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
+                </aside>
+            </div>
+        </article>
+    
+        <br><br>        
+    
+        <p>For some weird reason, changing the &lt;pre&gt;'s width to pixel-specified value (350 here), makes it behave a bit better. But one: this is not a satisfactory sollution, two: it doesn't work all the way. Shrink the window enough, and it will still push the note out through the black border.</p>
+
+        <article>
+            <h2>html &lt;link&gt; element</h2>
+            <div class="article-content">
+                <div class="main-content">
+                    <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
+                    <pre class="red-outline" style="width: 350px">&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;</pre>
+                </div>
+                <aside>
+                    In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
+                </aside>
+            </div>
+        </article>
+    
+        <br><br>    
+        
+        <p>Adding <code>max-width: 80%;</code> to the green-dashed &lt;div&gt; (in addition to existing <code>flex: 0.8;</code>) <i>almost</i> works (a wierd behavior at maximum browser horizontal shrinkage)</p>
+
+        <article>
+            <h2>html &lt;link&gt; element</h2>
+            <div class="article-content">
+                <div class="main-content" style="max-width: 80%;">
+                    <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
+                    <pre class="red-outline">&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;</pre>
+                </div>
+                <aside>
+                    In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
+                </aside>
+            </div>
+        </article>        
+    </body>
+</html>
