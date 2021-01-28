@@ -47,84 +47,91 @@
         </style>
     </head>
     <body>
-        <p>Example link as <span class="red-outline">&lt;code&gt;</span></p>
+        <p>Say we want a simple article containing some text  including a piece of code on the left and an aside on the right.</p>
+
+        <p>The green-dashed &lt;div&gt; has <code>flex: 0.8;</code> set, the &lt;aside&gt; at the right has <code>flex: 0.2;</code>, and the black-bordered &lt;article&gt; is set to <code>display: flex;</code></p>
+        
+        <p>Wrapping the code we want to display in a &lt;code&gt; tag 'works', as in it doesn't destroy the outer layout. But it breaks our code in weird places, and disregards newlines.</p>
+        
+        <p>To see the point, extend and contract your browser widnow horizontally.</p>
         <article>
-            <h2>html &lt;link&gt; element</h2>
             <div class="article-content">
                 <div class="main-content">
-                    <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
-                    <code class="red-outline">&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;</code>
+                    <code class="red-outline">function returnMeALink() {
+                        retrun "&lt;link href="https://fonts.googleapis.com/css2?family=... rel='stylesheet'&gt;";
+                    }</code>
                 </div>
                 <aside>
-                    In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </aside>
             </div>
         </article>
 
         <br><br>
         
-        <p>Example link as &lt;pre&gt;, the green-dashed &lt;div&gt; has <code>flex: 0.8;</code> set, the &lt;aside&gt; at the right has <code>flex: 0.2;</code> </p>
+        <p>We have to use &lt;pre&gt; or set <code>white-space: nowrap|pre</code> etc., which causes the same issues: it pushes the &lt;aside&gt; through the &lt;article&gt; bounds to the right (even if the &lt;pre&gt; has <code>overflow-x: auto;</code>:
+        </p>
 
         <article>
-            <h2>html &lt;link&gt; element</h2>
             <div class="article-content">
                 <div class="main-content">
-                    <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
-                    <pre class="red-outline">&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;</pre>
+<pre class="red-outline">function returnMeALink() {
+    retrun "&lt;link href="https://fonts.googleapis.com/css2?family=... rel='stylesheet'&gt;";
+}</pre>
                 </div>
                 <aside>
-                    In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </aside>
             </div>
         </article>
     
         <br><br>
         
-        <p>Let's change the &lt;pre&gt;'s width to just 50% to see if it changes anything:</p>
+        <p>Even though it makes no sense here, as an experiment let's change the &lt;pre&gt;'s width to 50% and see if it changes anything:</p>
 
         <article>
-            <h2>html &lt;link&gt; element</h2>
             <div class="article-content">
                 <div class="main-content">
-                    <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
-                    <pre class="red-outline" style="width: 50%">&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;</pre>
+<pre class="red-outline" style="width: 50%;">function returnMeALink() {
+    retrun "&lt;link href="https://fonts.googleapis.com/css2?family=... rel='stylesheet'&gt;";
+}</pre>
                 </div>
                 <aside>
-                    In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </aside>
             </div>
         </article>
     
         <br><br>        
     
-        <p>For some weird reason, changing the &lt;pre&gt;'s width to pixel-specified value (350 here), makes it behave a bit better. But one: this is not a satisfactory sollution, two: it doesn't work all the way. Shrink the window enough, and it will still push the note out through the black border.</p>
+        <p>For some weird reason, changing the &lt;pre&gt;'s width to pixel-specified value (350 here), makes it behave a bit better. But fixed pixel width is not a satisfactory solution. And it doesn't work all the way; shrink the window enough and it will push the note right through.</p>
 
         <article>
-            <h2>html &lt;link&gt; element</h2>
             <div class="article-content">
                 <div class="main-content">
-                    <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
-                    <pre class="red-outline" style="width: 350px">&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;</pre>
+<pre class="red-outline" style="width: 350px;">function returnMeALink() {
+    retrun "&lt;link href="https://fonts.googleapis.com/css2?family=... rel='stylesheet'&gt;";
+}</pre>
                 </div>
                 <aside>
-                    In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </aside>
             </div>
         </article>
     
         <br><br>    
         
-        <p>Adding <code>max-width: 80%;</code> to the green-dashed &lt;div&gt; (in addition to existing <code>flex: 0.8;</code>) <i>almost</i> works (a wierd behavior at maximum browser horizontal shrinkage)</p>
+        <p>Adding <code>max-width: 80%;</code> to the green-dashed &lt;div&gt; (in addition to existing <code>flex: 0.8;</code>) pretty much works (a weird behavior at maximum browser horizontal shrinkage). Why, how - I sadly have no idea.</p>
 
         <article>
-            <h2>html &lt;link&gt; element</h2>
             <div class="article-content">
                 <div class="main-content" style="max-width: 80%;">
-                    <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
-                    <pre class="red-outline">&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;</pre>
+<pre class="red-outline">function returnMeALink() {
+    retrun "&lt;link href="https://fonts.googleapis.com/css2?family=... rel='stylesheet'&gt;";
+}</pre>
                 </div>
                 <aside>
-                    In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </aside>
             </div>
         </article>        

@@ -47,12 +47,6 @@ pre {
     margin: 0;
 }
 
-/*
-pre:hover, pre:focus {
-  width: min-content;
-}
-*/
-
 code {
     display: inline-block;
     font-family: monospace;
@@ -80,6 +74,17 @@ aside {
     padding-left: 0.25rem;
     margin-left: 0.5rem;
     margin-top: 0.5rem;
+    transition: all .1s;
+}
+
+aside:hover {
+    background: #efe;
+    color: black;
+    border: 1px solid #333;
+    padding: 0.25rem;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.1);
+    transform-origin: top right;
+    transform: scale(1.5);
 }
 
 aside a:link {

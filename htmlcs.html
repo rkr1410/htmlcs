@@ -10,7 +10,7 @@
     </head>
     <body>
         <section>
-            <article class="tag-description" id="doctype">
+            <article class="tag-description interesting" id="doctype">
                 <div class="title">
                     <h2 class="article-title">
                         &lt;!--<b>DOCTYPE html</b>&gt;
@@ -19,13 +19,13 @@
                 </div>
                 <div class="container">
                     <div class="content-with-aside">
-                        <p><code><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span></code> is a required preamble at the top of an HTML document. It prevents the browser from going into quirks mode <i>(a page redndering flow which emulates nonstandard behavior in old browsers)</i>.</p>
+                        <p><code><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span></code> is a required preamble at the top of an HTML document. It prevents the browser from going into <a href="https://en.wikipedia.org/wiki/Quirks_mode" target="_blank">quirks mode</a> <i>(a page rendering flow which emulates nonstandard behavior in old browsers)</i>.</p>
                     </div>
-                    <aside><p>Although <a href="https://html.spec.whatwg.org/multipage/syntax.html#the-doctype">the specification</a> says it's case-insensitive, it's a convention. <a href="https://dev.w3.org/html5/html-polyglot/html-polyglot.html#h3_doctype">W3 Polyglot Markup</a> requires the 'DOCTYPE' string to be uppercase, and suggests 'html' to be lowercase.</p></aside>
+                    <aside><p>Although <a href="https://html.spec.whatwg.org/multipage/syntax.html#the-doctype">the specification</a> says it's case-insensitive, the provided example is a widely used convention. <a href="https://dev.w3.org/html5/html-polyglot/html-polyglot.html#h3_doctype">W3 Polyglot Markup</a> requires the 'DOCTYPE' string to be uppercase, and suggests 'html' to be lowercase.</p></aside>
                 </div>
             </article>
 
-            <article class="tag-description" id="html">
+            <article class="tag-description interesting" id="html">
                 <div class="title">
                     <h2 class="article-title">
                         <b>&lt;html</b> lang="en"<b>&gt;</b>
@@ -33,10 +33,52 @@
                     <a href="https://html.spec.whatwg.org/#the-html-element" target="_blank">spec</a>
                 </div>
                 <p>HTML document root. Specifying a <code>lang</code> attirbute will help speech synthesis in determining pronounciation rules, and translation popups might just stop pestering the user.</p>
+                <p>This element might be important for absolute positioning. If an element has <code>position: absolute;</code> and none of it's parent specifically set <code>position: relative;</code>, then the absolute element will be positioned relative to <code>&lt;html&gt;</code> (and not the <code>&lt;body&gt;</code> as some tutorials mention)</p>
             </article>
 
-            <article class="tag-description" id="link">
+            <article class="tag-description" id="head">
+                <div class="title">
+                    <h2 class="article-title">
+                        html &gt; <b>&lt;head&gt;</b>
+                    </h2>
+                    <a href="https://html.spec.whatwg.org/#the-head-element" target="_blank">spec</a>
+                </div>
+                <p>May contain:</p>
+                <ul>
+                    <li><code>&lt;title&gt;</code></li>
+                    <li><code>&lt;base&gt;</code></li>
+                    <li><code>&lt;meta&gt;</code></li>
+                    <li><code>&lt;link&gt;</code></li>
+                    <li><code>&lt;style&gt;</code></li>
+                </ul>
+            </article>
+
+            <article class="tag-description" id="title">
+                <div class="title">
+                    <h2 class="article-title">
+                        html &gt; head &gt; <b>&lt;title&gt;</b>
+                    </h2>
+                    <a href="https://html.spec.whatwg.org/#the-title-element" target="_blank">spec</a>
+                </div>
+                <p>First element in <code>&lt;head&gt;</code> section. Spec states it should be meaningful out of context. Can be omitted when provided by higher-level context (e.g. email subject, when html is used for the body).</p>
+            </article>
+            
+            <article class="tag-description" id="base">
+                <div class="title">
+                    <h2 class="article-title">
+                        html &gt; head &gt; <b>&lt;base&gt;</b>
+                    </h2>
+                    <a href="https://html.spec.whatwg.org/#the-base-element" target="_blank">spec</a>
+                </div>
+                <p>Similar to <code>&lt;title&gt;</code>, if it's present there can be only one. Specifies the base URL for the document and default link navigation behavior.</p>
+                <p><code>&lt;base href="http://abc.com/index.html" target="_blank"&gt;</code> will make clicking on a link <code>&lt;a href="a.html"&gt;test&lt/a&gt;</code> open  http://abc.com/a.html in a new browser tab.</p>
+            </article>
+            
+            <article class="tag-description interesting" id="link">
+                <div class="title">
                 <h2 class="article-title">html &gt; head &gt; <b>&lt;link rel href&gt;</b></h2>
+                    <a href="https://html.spec.whatwg.org/#the-link-element" target="_blank">spec</a>
+                </div>
                 <div class="container">
                     <div class="content-with-aside">
                         <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
@@ -46,13 +88,16 @@
 </pre>
                     </div>
                     <aside>
-                        In this specific case (getting a google font) we could just go to CSS and @import url('font.url');
+                        <p>In this specific case (getting a google font) we could just go to CSS and @import url('font.url');</p>
                     </aside>
                 </div>
             </article>
         </section>
         <!-- various tags -->
         <section>
+            <article>
+                <h2 class="article-title"><b>PSEUDOCLASSES!</b></h2>
+            </article>
             <article>
                 <h2 class="article-title"><b>Random tags</b></h2>
                 <p><code>&lt;<span class="hljs-name">wbr</span>&gt;</code> Insert inside a long eord to show the browser where it can break the line.</p>
