@@ -1,14 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="htmlcs.css">
-        <!-- TODO Check out Prism.js and see if it's any better then highlight.js -->
-<!--
-        <link rel="stylesheet" href="highlight/styles/default.css">
-        <script src="highlight/highlight.pack.js"></script>
--->
         <script src="tag-highlight.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
         <title>HTML+CSS crash course</title>
     </head>
     <body>
@@ -35,7 +30,7 @@
                     </h2>
                     <a href="https://html.spec.whatwg.org/#the-html-element" target="_blank">spec</a>
                 </div>
-                <p>HTML document root. Specifying a <code class="attr">lang</code> attirbute will help speech synthesis in determining pronounciation rules, and translation popups might just stop pestering the user.</p>
+                <p>HTML document root. Specifying a <code class="keyword">lang</code> attirbute will help speech synthesis in determining pronounciation rules, and translation popups might just stop pestering the user.</p>
                 <p>This element might be important for absolute positioning. If an element has <code class="css">position: absolute;</code> and none of it's parent specifically set <code class="css">position: relative;</code>, then the absolute element will be positioned relative to <code class="tag">html</code> (and not the <code class="tag">body</code> as some tutorials mention)</p>
             </article>
 
@@ -74,7 +69,7 @@
                     <a href="https://html.spec.whatwg.org/#the-base-element" target="_blank">spec</a>
                 </div>
                 <p>Similar to <code class="tag">title</code>, if it's present there can be only one. Specifies the base URL for the document and default link navigation behavior.</p>
-                <p><code>&lt;base href="http://abc.com/index.html" target="_blank"&gt;</code> will make clicking on a link <code>&lt;a href="a.html"&gt;test&lt;/a&gt;</code> open  http://abc.com/a.html in a new browser tab.</p>
+                <p><code class="tag">base href="http://abc.com/index.html" target="_blank"</code> will make clicking on a link <code class="tag">a href="a.html"</code> open  http://abc.com/a.html in a new browser tab.</p>
             </article>
             
             <article class="tag-description interesting" id="link">
@@ -85,10 +80,7 @@
                 <div class="container">
                     <div class="content-with-aside">
                         <p>Describes a relation between the current document and an external resource. Typically this is a stylesheet, but can be a google font, favicon or main screen application icon for a mobile app. So, in head section:</p>
-<pre>
-<code>&lt;link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"&gt;
-</code>            
-</pre>
+<pre><code class="tag">link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet"</code></pre>
                     </div>
                     <aside>
                         <p>In this specific case (getting a google font) we could just go to CSS and @import url('font.url');</p>

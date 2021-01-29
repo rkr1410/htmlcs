@@ -12,8 +12,8 @@ html {
 }
 
 body {
-    max-width: 700px;
-    margin: 9 auto;
+    width: 750px;
+    margin: 0 auto;
     padding: var(--body-padding);
     background: #fff;
 }
@@ -53,6 +53,7 @@ article p {
 
 pre {
     margin: 0;
+    overflow-x: auto;
 }
 
 code {
@@ -68,28 +69,30 @@ code {
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-code.tag {
+code.keyword {
     color: var(--tag-color);
-}
-
-code.tag span {
-    color: var(-tag-bracket-color);
     font-weight: bold;
 }
 
-code.attr {
+code span.bracket {
+    color: var(-tag-bracket-color);
+}
+
+code span.tag-name {
     color: var(--tag-color);
+    font-weight: bold;
 }
 
-code.css > span.attribute {
+code > span.attribute {
     color: var(--css-attribute-color);
+    font-weight: bold;
 }
 
-code.css > span.punctuation {
+code > span.punctuation {
     color: var(--css-punctuation-color);
 }
 
-code.css > span.value {
+code > span.value {
     color: var(--css-value-color);
 }
 

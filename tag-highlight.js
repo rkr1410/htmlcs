@@ -1,72 +1,62 @@
-function createSpan(txt, className) {
-    let span = document.createElement('span');
+function span(txt, className) {
+    let spanElem = document.createElement('span');
     let spanTxt = document.createTextNode(txt);
     
     if (className) {
-        span.setAttribute('class', className);
+        spanElem.setAttribute('class', className);
     }
-    span.appendChild(spanTxt);
-    return span;
+    spanElem.appendChild(spanTxt);
+    return spanElem;
 }
 
-function hilightCode(selecta, regexp, transmogrify) {
-    let found = document.querySelectorAll(selecta);
-    for (let aFind of found) {
-        let text = aFind.innerHTML;
-        if (regexp.test(text)) {
-            aFind.innerHTML = '';
-            transmogrify(aFind, text.match(regexp));
+function highlightCSS(node, attribute, value) {
+    node.innerHTML = '';
+    node.appendChild(span(attribute, 'attribute'));
+    node.appendChild(span(': ', 'punctuation'));
+    node.appendChild(span(value, 'value'));
+    node.appendChild(span(';', 'punctuation'));    
+}
+
+function highlightTag(node, tagName, attrs = []) {
+    node.innerHTML = '';
+    node.appendChild(span('<', 'bracket'));
+    node.appendChild(span(tagName, "tag-name"));
+    for (attr of attrs) {
+        node.appendChild(span(' ' + attr[1], "attribute"));
+        node.appendChild(span('=\'', "punctuation"));
+        node.appendChild(span(attr[2], "value"));
+        node.appendChild(span('\'', "punctuation"));
+    }
+    node.appendChild(span('>', 'bracket'));
+}
+
+let singleWordOnly = /^[A-Za-z]+$/;
+let firstWord = /^[A-Za-z]+/;
+let attributes = /(\w+)=['"](.+?)['"]/g;
+
+function htmlTagNode(node) {
+    let text = node.innerHTML;
+
+    if (firstWord.test(text)) {
+        let tagName = text.match(firstWord)[0];
+        let attrs = [...text.matchAll(attributes)];
+        if (tagName) {
+            highlightTag(node, tagName, attrs);
         }
     }
 }
 
-function highlightCSSCode() {
-    hilightCode('code.css', /(\w+):\s*(.+);/, (node, match) => {
-        node.innerHTML = '';
-        node.appendChild(createSpan(match[1], 'attribute'));
-        node.appendChild(createSpan(': ', 'punctuation'));
-        node.appendChild(createSpan(match[2], 'value'));
-        node.appendChild(createSpan(';', 'punctuation'));
-    });
-}
+let attrAndValue = /(\w+):\s*(.+);/;
 
-function highlightTags() {
-    hilightCode('code.tag', /\w+/, (node, match) => {
-        node.appendChild(createSpan('<'));
-        node.appendChild(document.createTextNode(match[0]));
-        node.appendChild(createSpan('>'));
-    });
+function cssNode(node) {
+    let text = node.innerHTML;
+    if (attrAndValue.test(text)) {
+        var match = text.match(attrAndValue);
+        highlightCSS(node, match[1], match[2]);
+    }
 }
-
-/*function highlightTag(node) {
-    
-}
-
-function highlightTagWithAttributes(node) {
-    
-}
-
-function highlightTags() {
-    let found = document.querySelectorAll('code.tag');
-    for (let node of found) {
-        let simpleWord = /^[A-Za-z]+$/;
-        let firstWord = /^[A-Za-z]+/;
-        let attributes = /(\w+)='(.+?)'/g;
-        let text = node.innerHTML;
-        
-        node.innerHTML = '';
-        if (simpleWord.test(text)) {
-            highlightSimpleTag(node, text);
-        } else {
-            highlightTagWithAttrs(node, text.match(firstWord)[0], [...text.matchAll(attributes)]);
-        }
-        
-    }    
-}
-
-*/
 
 document.addEventListener("DOMContentLoaded", function(){
-    highlightTags();
-    highlightCSSCode();
+    document.querySelectorAll('code.tag').forEach(c => htmlTagNode(c));
+    document.querySelectorAll('code.css').forEach(c => cssNode(c));
 });
