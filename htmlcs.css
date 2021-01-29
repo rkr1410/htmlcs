@@ -1,6 +1,14 @@
 html {
     background: #eee;
     --body-padding: 2rem;
+    
+    --tag-color: #77a;
+    --tag-bracket-color: #669;
+    --title-light-color: #ccf;
+    --title-dark-color: #669;
+    --css-punctuation-color: ccf;
+    --css-attribute-color: #669;
+    --css-value-color: #568;
 }
 
 body {
@@ -29,13 +37,13 @@ article > div.title {
 article > div.title > h2.article-title {
     flex: 1;
     font-family: monospace;
-    color: #ccf;
+    color: var(--title-light-color);
     margin: 0;
     border-bottom: 1px solid #666;
 }
 
 article > div.title > h2.article-title > b {
-    color: #669;
+    color: var(--title-dark-color);
 }
 
 article p {
@@ -58,6 +66,31 @@ code {
     padding: 2px 4px;
     margin: 1px;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+code.tag {
+    color: var(--tag-color);
+}
+
+code.tag span {
+    color: var(-tag-bracket-color);
+    font-weight: bold;
+}
+
+code.attr {
+    color: var(--tag-color);
+}
+
+code.css > span.attribute {
+    color: var(--css-attribute-color);
+}
+
+code.css > span.punctuation {
+    color: var(--css-punctuation-color);
+}
+
+code.css > span.value {
+    color: var(--css-value-color);
 }
 
 div.content-with-aside {
