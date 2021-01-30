@@ -7,20 +7,30 @@
         <title>HTML+CSS crash course</title>
     </head>
     <body>
+        <template id="onlyOne">
+            <abbr class="only-one" title="There can be only one">1!</abbr>
+        </template>
+        <template id="noEndTag">
+            <abbr class="no-endtag" title="No end tag">&lt;&#x2F;&gt;</abbr>
+        </template>
         <section>
             <article class="tag-description interesting" id="doctype">
                 <div class="title">
                     <h2 class="article-title">
                         &lt;!--<b>DOCTYPE html</b>&gt;
                     </h2>
-                    <a href="https://html.spec.whatwg.org/#the-doctype" target="_blank">spec</a>
+                    <a href="https://html.spec.whatwg.org/#the-doctype" rel="noopener" target="_blank">spec</a>
                 </div>
                 <div class="container">
                     <div class="content-with-aside">
-                        <p><code><span class="bracket">&lt;</span><span class="keyword">!DOCTYPE html</span><span class="bracket">&gt;</span></code> is a required preamble at the top of an HTML document. It prevents the browser from going into <a href="https://en.wikipedia.org/wiki/Quirks_mode" target="_blank">quirks mode</a> <i>(a page rendering flow which emulates nonstandard behavior in old browsers)</i>.</p>
+                        <p><code><span class="bracket">&lt;</span><span class="keyword">!DOCTYPE html</span><span class="bracket">&gt;</span></code> is a required preamble at the top of an HTML5 document. It prevents the browser from going into <a href="https://en.wikipedia.org/wiki/Quirks_mode" rel="noopener" target="_blank">quirks mode</a> <i>(a page rendering flow which emulates nonstandard behavior in old browsers)</i>.</p>
                     </div>
                     <aside><p>Although <a href="https://html.spec.whatwg.org/multipage/syntax.html#the-doctype">the specification</a> says it's case-insensitive, the provided example is a widely used convention. <a href="https://dev.w3.org/html5/html-polyglot/html-polyglot.html#h3_doctype">W3 Polyglot Markup</a> requires the 'DOCTYPE' string to be uppercase, and suggests 'html' to be lowercase.</p></aside>
                 </div>
+                <footer>
+                    <abbr class="only-one" title="There can be only one">1!</abbr>
+                    <abbr class="no-endtag" title="This is not a tag - so it doesn't have an end tag">&lt;&#x2F;&gt;</abbr>
+                </footer>
             </article>
 
             <article class="tag-description interesting" id="html">
@@ -28,10 +38,13 @@
                     <h2 class="article-title">
                         <b>&lt;html</b> lang="en"<b>&gt;</b>
                     </h2>
-                    <a href="https://html.spec.whatwg.org/#the-html-element" target="_blank">spec</a>
+                    <a href="https://html.spec.whatwg.org/#the-html-element" rel="noopener" target="_blank">spec</a>
                 </div>
                 <p>HTML document root. Specifying a <code class="keyword">lang</code> attirbute will help speech synthesis in determining pronounciation rules, and translation popups might just stop pestering the user.</p>
                 <p>This element might be important for absolute positioning. If an element has <code class="css">position: absolute;</code> and none of it's parent specifically set <code class="css">position: relative;</code>, then the absolute element will be positioned relative to <code class="tag">html</code> (and not <code class="tag">body</code> as mentioned by some tutorials)</p>
+                <footer>
+                    <abbr class="onlyOne"></abbr>
+                </footer>
             </article>
 
             <article class="tag-description" id="head">
@@ -39,7 +52,7 @@
                     <h2 class="article-title">
                         html &gt; <b>&lt;head&gt;</b>
                     </h2>
-                    <a href="https://html.spec.whatwg.org/#the-head-element" target="_blank">spec</a>
+                    <a href="https://html.spec.whatwg.org/#the-head-element" rel="noopener" target="_blank">spec</a>
                 </div>
                 <p>May contain:</p>
                 <ul>
@@ -49,6 +62,9 @@
                     <li><code class="tag">link</code></li>
                     <li><code class="tag">style</code></li>
                 </ul>
+                <footer>
+                    <abbr class="onlyOne"></abbr>
+                </footer>
             </article>
 
             <article class="tag-description" id="title">
@@ -56,9 +72,12 @@
                     <h2 class="article-title">
                         html &gt; head &gt; <b>&lt;title&gt;</b>
                     </h2>
-                    <a href="https://html.spec.whatwg.org/#the-title-element" target="_blank">spec</a>
+                    <a href="https://html.spec.whatwg.org/#the-title-element" rel="noopener" target="_blank">spec</a>
                 </div>
                 <p>First element in <code class="tag">head</code> section. Spec states it should be meaningful out of context. Can be omitted when provided by higher-level context (e.g. email subject, when html is used for the body).</p>
+                <footer>
+                    <abbr class="onlyOne"></abbr>
+                </footer>
             </article>
             
             <article class="tag-description" id="base">
@@ -66,16 +85,20 @@
                     <h2 class="article-title">
                         html &gt; head &gt; <b>&lt;base&gt;</b>
                     </h2>
-                    <a href="https://html.spec.whatwg.org/#the-base-element" target="_blank">spec</a>
+                    <a href="https://html.spec.whatwg.org/#the-base-element" rel="noopener" target="_blank">spec</a>
                 </div>
                 <p>Similar to <code class="tag">title</code>, if it's present there can be only one. Specifies the base URL for the document and default link navigation behavior.</p>
                 <p><code class="tag">base href="http://abc.com/index.html" target="_blank"</code> will make clicking on a link <code class="tag">a href="a.html"</code> open  http://abc.com/a.html in a new browser tab.</p>
+                <footer>
+                    <abbr class="onlyOne"></abbr>
+                    <abbr class="noEndTag"></abbr>
+                </footer>             
             </article>
             
             <article class="tag-description interesting" id="link">
                 <div class="title">
                 <h2 class="article-title">html &gt; head &gt; <b>&lt;link rel href&gt;</b></h2>
-                    <a href="https://html.spec.whatwg.org/#the-link-element" target="_blank">spec</a>
+                    <a href="https://html.spec.whatwg.org/#the-link-element" rel="noopener" target="_blank">spec</a>
                 </div>
                 <div class="container">
                     <div class="content-with-aside">
@@ -86,6 +109,9 @@
                         <p>In this specific case (getting a google font) we could just go to CSS and @import url('font.url');</p>
                     </aside>
                 </div>
+                <footer>
+                    <abbr class="noEndTag"></abbr>
+                </footer>
             </article>
         </section>
         <!-- various tags -->

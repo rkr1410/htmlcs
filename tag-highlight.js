@@ -1,3 +1,4 @@
+// create a span element, with text node and possibly a class
 function span(txt, className) {
     let spanElem = document.createElement('span');
     let spanTxt = document.createTextNode(txt);
@@ -33,7 +34,6 @@ function highlightTag(node, tagName, attrs = []) {
 let singleWordOnly = /^[A-Za-z]+$/;
 let firstWord = /^[A-Za-z]+/;
 let attributes = /(\w+)=['"](.+?)['"]/g;
-
 function htmlTagNode(node) {
     let text = node.innerHTML;
 
@@ -47,7 +47,6 @@ function htmlTagNode(node) {
 }
 
 let attrAndValue = /(\w+):\s*(.+);/;
-
 function cssNode(node) {
     let text = node.innerHTML;
     let match = text.match(attrAndValue);
@@ -56,7 +55,16 @@ function cssNode(node) {
     }
 }
 
+function insertTemplate(templateId, toReplace) {
+    let templateCopy = document.querySelector(templateId).content.cloneNode(true);
+    toReplace.replaceWith(templateCopy);
+}
+
 document.addEventListener("DOMContentLoaded", function(){
     document.querySelectorAll('code.tag').forEach(c => htmlTagNode(c));
     document.querySelectorAll('code.css').forEach(c => cssNode(c));
+    
+    document.querySelectorAll('footer > abbr.onlyOne').forEach(c => insertTemplate('#onlyOne', c));
+    document.querySelectorAll('footer > abbr.noEndTag').forEach(c => insertTemplate('#noEndTag', c));
+    
 });

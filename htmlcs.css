@@ -27,11 +27,33 @@ body {
 }
 
 article {
+    position: relative;
     margin-top: var(--body-padding);
     border: 1px solid #555;
     border-radius: 0.25rem;
-    padding: 1rem;
+    padding: 1rem 1rem 1.7rem 1rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.26)
+}
+
+article > footer {
+    margin: 0;
+    position: absolute; 
+    bottom: 0.3rem; 
+    left: 0.7rem; 
+}
+
+article > footer > abbr {
+    font-weight: bolder;
+}
+
+article > footer > abbr.no-endtag {
+    text-decoration: line-through; 
+    color: #cc241d;
+}
+
+article > footer > abbr.only-one {
+    text-decoration: none;
+    color: #d5c4a1;
 }
 
 body > section:first-of-type > article:first-of-type {
