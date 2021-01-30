@@ -50,8 +50,8 @@ let attrAndValue = /(\w+):\s*(.+);/;
 
 function cssNode(node) {
     let text = node.innerHTML;
-    if (attrAndValue.test(text)) {
-        var match = text.match(attrAndValue);
+    let match = text.match(attrAndValue);
+    if (match) {
         highlightCSS(node, match[1], match[2]);
     }
 }

@@ -2,13 +2,21 @@ html {
     background: #eee;
     --body-padding: 2rem;
     
-    --tag-color: #77a;
-    --tag-bracket-color: #669;
+    --link-color: #458588;
+    --link-visited-color: #8f3f71;
+    
+    --code-background-color: #f9f5d7;
+    --tag-color: #665c64;
+    --tag-bracket-color: #bdae93;
     --title-light-color: #ccf;
     --title-dark-color: #669;
-    --css-punctuation-color: ccf;
+    --css-punctuation-color: #b16286;
     --css-attribute-color: #669;
-    --css-value-color: #568;
+    --css-value-color: #b57614;
+    
+    --aside-hover-border-color: #d65d0e;
+    --aside-hover-background: #3c3836;
+    --aside-hover-color: #fbf1c7;
 }
 
 body {
@@ -60,7 +68,7 @@ code {
     display: inline-block;
     font-family: monospace;
     font-style: normal;
-    background-color: #f0f0f0;
+    background-color: var(--code-background-color);
     color: #333;
     border: 1px solid #999999;
     border-radius: 3px;
@@ -69,13 +77,13 @@ code {
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-code.keyword {
+code.keyword, span.keyword {
     color: var(--tag-color);
     font-weight: bold;
 }
 
 code span.bracket {
-    color: var(-tag-bracket-color);
+    color: var(--tag-bracket-color);
 }
 
 code span.tag-name {
@@ -114,21 +122,22 @@ aside {
 }
 
 aside:hover {
-    background: #efe;
-    color: black;
-    border: 1px solid #333;
+    background: var(--aside-hover-background);
+    color: var(--aside-hover-color);
+    border: 4px solid var(--aside-hover-border-color);
+    border-radius: 0.25rem;
     padding: 0.25rem;
     box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.1);
     transform-origin: top right;
     transform: scale(1.5);
 }
 
-aside a:link {
-    color: #789;
+a:link {
+    color: var(--link-color);
 }
 
-aside a:visited {
-    color: #789;
+a:visited {
+    color: var(--link-visited-color);
 }
 
 aside p {
