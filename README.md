@@ -1,25 +1,21 @@
 # The project
-html and css cheatsheet/crash course
+HTML5 element list, containing short description if there's anything interesting about the tag that's not common knowledge. Created as an effort to go through each element and learn the html, css and javascript along the way.  
 
-# Location
-The core material resides in `htmlcs` subdirectory, as node.js/express application. Files in root directory are 
-- scratchpad files, like `playground.html`
+# Contents
+The core material resides in `htmlcs` subdirectory, as `Node.js/express` application.
+
+`random` subdirectory contains:
+- a previous attempt at the project as `index.html`
 - showcases like `shadows.html`
-- illustrations of a quirk/problem `like pre-width-problem.html`
+- illustrations of a quirk/problem like `pre-width-problem.html`
 
 #Building and running
-Change the directory to htmlcs:
+Change the directory to `htmlcs` and install with:
 
-**>** `cd htmlcs`
-
-Install project:
-
-**>** `npm install`
-
-[See here](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/skeleton_website#enable_server_restart_on_file_changes) on how to install with no need to restart the server on any change to source files.
+`> npm install`
 
 Run with:
 
-`DEBUG=htmlcs:* npm start`
+`> npm start`
 
-And access http://localhost:3000/htmlcs.html
+Access http://localhost:3000/htmlcs.html to interact. It is possible to see bare html just by opening `htmlcs.html` in the browser, but CSS won't be used (fixable by changing the path in source), and scripts won't be served (not fixable due to CORS and ES6 module use). 
