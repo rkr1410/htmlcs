@@ -17,6 +17,8 @@ html {
     --aside-hover-border-color: #d65d0e;
     --aside-hover-background: #3c3836;
     --aside-hover-color: #fbf1c7;
+
+    --footer-height: 1.6rem;
 }
 
 body {
@@ -32,29 +34,41 @@ article {
     margin-top: var(--body-padding);
     border: 1px solid #555;
     border-radius: 0.25rem;
-    padding: 1rem 1rem 1.7rem 1rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.26)
+    padding: 1rem 1rem 2.3rem 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.26);
 }
 
 article > footer {
-    margin: 0;
-    position: absolute; 
-    bottom: 0.3rem; 
-    left: 0.7rem; 
+    position: absolute;
+    bottom: 0.4rem;
+    left: 0.7rem;
+    width: 100%;
+    height: var(--footer-height);
+    display: flex;
 }
 
 article > footer > abbr {
     font-weight: bolder;
+    margin: 0 2px;
+    box-sizing: border-box;
+    width: var(--footer-height);
+    height: var(--footer-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--aside-hover-background);
+    color: var(--aside-hover-color);
+    border: 2px solid var(--aside-hover-border-color);
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.1);
 }
 
 article > footer > abbr.no-endtag {
     text-decoration: line-through; 
-    color: #cc241d;
 }
 
 article > footer > abbr.only-one {
     text-decoration: none;
-    color: #d5c4a1;
 }
 
 body > section:first-of-type > article:first-of-type {
@@ -134,7 +148,7 @@ div.content-with-aside {
 
 aside {
     flex: 0.2;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-family: sans-serif;
     color: #999;
     border-left: 1px solid #555;
@@ -152,7 +166,7 @@ aside:hover {
     padding: 0.25rem;
     box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.1);
     transform-origin: top right;
-    transform: scale(1.5);
+    transform: scale(1.35);
 }
 
 a:link {
