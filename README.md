@@ -9,7 +9,7 @@ The core material resides in `htmlcs` subdirectory, as `Node.js/express` applica
 - showcases like `shadows.html`
 - illustrations of a quirk/problem like `pre-width-problem.html`
 
-#Building and running
+# Building and running
 Change the directory to `htmlcs` and install with:
 
 `> npm install`
