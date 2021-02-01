@@ -24,6 +24,7 @@ body {
     margin: 0 auto;
     padding: var(--body-padding);
     background: #fff;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 article {
