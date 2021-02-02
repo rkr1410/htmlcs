@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--  A simple live search example  -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>live search</title>
+  <style>
+    div.search-results {
+        border: 1px solid #333333;
+        border-radius: 5px;
+        margin: 2rem;
+    }
+    article {
+        width: 80%;
+        height: 20vh;
+        background: #ffa8fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 48px;
+        margin-bottom: 15px;
+        border: 3px dashed #665c64;
+        border-radius: 10px;
+    }
+  </style>
+  <script>
+    let prevSearch= "";
+    let articles;
+    document.addEventListener("DOMContentLoaded", function() {
+      articles = document.querySelectorAll('article');
+      document.querySelector("#search-box").addEventListener("keyup", function(e) {
+        e.preventDefault();
+        const val = document.querySelector("#search-box").value;
+        if (val && val !== prevSearch) {
+          for (let article of articles) {
+            let artId = article.getAttribute('id');
+            if (artId.toLowerCase().startsWith(val)) {
+              article.style.display = "flex";
+            } else {
+              article.style.display = "none";
+            }
+          }
+          prevSearch = val;
+        } else if (!val) {
+          for (let article of articles) {
+            article.style.display = "flex";
+          }
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <form>
+    <label for="search-box">Search:</label>
+    <input id="search-box" type="text">
+  </form>
+  <div class="search-results">
+    <article id="doctype">doctype</article>
+    <article id="html">html</article>
+    <article id="head">head</article>
+    <article id="h1">h1</article>
+    <article id="h2">h2</article>
+    <article id="h3">h3</article>
+    <article id="h4">h4</article>
+    <article id="h5">h5</article>
+    <article id="h6">h6</article>
+    <article id="title">title</article>
+    <article id="meta">meta</article>
+    <article id="base">base</article>
+    <article id="link">link</article>
+    <article id="a">a</article>
+    <article id="b">b</article>
+    <article id="i">i</article>
+    <article id="br">br</article>
+    <article id="hr">hr</article>
+    <article id="em">em</article>
+    <article id="ul">ul</article>
+    <article id="ol">ol</article>
+    <article id="li">li</article>
+  </div>
+</body>
+</html>
