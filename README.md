@@ -2,9 +2,9 @@
 HTML5 element list, containing short description if there's anything interesting about the tag that's not common knowledge. Created as an effort to go through each element and learn the html, css and javascript along the way.  
 
 # Contents
-The core material resides in `htmlcs` subdirectory, as `Node.js/express` application.
+The project is a `Node.js/express`, which you can find in `htmlcs` directory.
 
-`random` subdirectory contains:
+A directory called `random` contains:
 - a previous attempt at the project as `index.html`
 - showcases like `shadows.html`
 - illustrations of a quirk/problem like `pre-width-problem.html`
